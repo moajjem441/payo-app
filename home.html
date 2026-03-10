@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo | Home</title>
+
+    <!-- tailwind+ daisi ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- fonts-awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <section  class="bg-base-200 min-h-screen w-lg mx-auto " >
+
+           <!-- header starts from here -->
+    <header class="border-y-2 border-b-gray-300 sticky top-0 bg-base-200 z-10">
+        <div class="container flex justify-between p-5 items-center">
+
+            <div class="left flex gap-3">
+                <div class="logo">
+                    <img class=" w-[70px]" src="./Payoo/assets/logo.png" alt="">
+                </div>
+                <div class="details">
+                    <h1 class="text-xl font-bold text-neutral">$<span id="balance">45000</span></h1>
+                    <p class="text-gray-500">Available Balance</p>
+                </div>
+
+            </div>
+
+            <div class="right">
+                <button class="btn btn-primary hover:bg-gray-500"><a href="./index.html"><i
+                            class="fa-solid fa-arrow-right-from-bracket"></i> Log Out </a></button>
+
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- header ends from here -->
+
+
+    <!-- welcome part starts from here -->
+    <section class="w-11/12 mx-auto">
+        <div class="pt-10 space-y-3">
+            <h2 class="text-xl font-bold ">Welcome to Pay<span class="text-[#7460ff] ">oo</span></h2>
+
+            <p class="text-gray-500 ">Enjoy easy and convenient financial services with us. Cashout charge is low and
+            </p>
+        </div>
+    </section>
+
+    <!-- welcome part ends from here -->
+
+
+
+    <!-- all buttons part starts from here -->
+
+    <section id="all-buttons" class="w-11/12 mx-auto py-10">
+
+        <div class="btn-container gird grid grid-cols-3 gap-4 ">
+
+            <button onclick="showOnly('add-money')"
+                class="bg-base-100 border-1 border-gray-300 rounded-xl hover:bg-gray-100 flex flex-col justify-center items-center p-3">
+                <img class="w-[35px]" src="./Payoo/assets/opt-1.png" alt="">
+                <h1 class="text-gray-500">Add Money</h1>
+            </button>
+
+            <button onclick="showOnly('cashout')"
+                class="bg-base-100 border-1 border-gray-300 rounded-xl hover:bg-gray-100 flex flex-col justify-center items-center p-3">
+                <img class="w-[35px]" src="./Payoo/assets/opt-1.png" alt="">
+                <h1 class="text-gray-500">Cashout </h1>
+            </button>
+
+            <button onclick="showOnly('transfer-money')"
+                class="bg-base-100 border-1 border-gray-300 rounded-xl hover:bg-gray-100 flex flex-col justify-center items-center p-1">
+                <img class="w-[35px]" src="./Payoo/assets/opt-1.png" alt="">
+                <h1 class="text-gray-500">Transfer Money</h1>
+            </button>
+
+            <button onclick="showOnly('get-bonus-section')"
+                class="bg-base-100 border-1 border-gray-300 rounded-xl hover:bg-gray-100 flex flex-col justify-center items-center p-3">
+                <img class="w-[35px]" src="./Payoo/assets/opt-1.png" alt="">
+                <h1 class="text-gray-500">Get Bonus</h1>
+            </button>
+
+            <button
+                class="bg-base-100 border-1 border-gray-300 rounded-xl hover:bg-gray-100 flex flex-col justify-center items-center p-3">
+                <img class="w-[35px]" src="./Payoo/assets/opt-1.png" alt="">
+                <h1 class="text-gray-500">Pay Bill</h1>
+            </button>
+
+            <button onclick="showOnly('transaction-histoty')"
+                class="bg-base-100 border-1 border-gray-300 rounded-xl hover:bg-gray-100 flex flex-col justify-center items-center p-3">
+                <img class="w-[35px]" src="./Payoo/assets/opt-1.png" alt="">
+                <h1 class="text-gray-500">Transactions </h1>
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- all buttons part ends from here -->
+
+
+
+
+    <!-- add money starts from here -->
+    <section id="add-money" class="w-11/12 mx-auto py-3 hidden">
+        <h1 class="text-neutral font-bold text-xl pb-4">Add Money</h1>
+
+        <div class="card bg-base-100  rounded-[30px] p-2">
+            <div class="card-body">
+                <fieldset class="fieldset">
+
+                    <label class="label text-[15px] font-bold text-neutral">Select A Bank</label>
+                    <select id="select-part" class="select select-ghost bg-base-200 rounded-full w-full border-1 border-gray-300">
+                        <option disabled selected>Select back</option>
+                        <option value="DBBL">DBBL</option>
+                        <option value="City Bank">City Bank</option>
+                        <option value="GP Bank">GP Bank</option>
+                    </select>
+                    <br>
+
+                    <label class="label text-[15px] font-bold text-neutral">Bank Account Number</label>
+                    <input id="bank-account-number" type="number"
+                        class="input bg-base-200 w-full rounded-full p-5 text-[15px] "
+                        placeholder="Enter Your Bank Account number" minlength="11" maxlength="11" />
+                    <br>
+
+                    <label class="label text-[15px] font-bold text-neutral">Amount To Add</label>
+                    <input id="amount-to-add" type="number"
+                        class="input bg-base-200 w-full rounded-full p-5 text-[15px] "
+                        placeholder="Enter amount to add" />
+                    <br>
+
+                    <label class="label text-[15px] font-bold text-neutral">Pin Number </label>
+                    <input id="pin" type="password" class="input bg-base-200 w-full rounded-full p-5 text-[15px]"
+                        placeholder="Enter Your 4 Digit pin" />
+
+                    <button id="add-money-btn"
+                        class="btn btn-primary mt-4 w-full rounded-full p-5 text-xl">Add Money</button>
+                </fieldset>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- add money ends from here -->
+
+
+
+    <!-- cash out starts from here -->
+
+    <section id="cashout" class="w-11/12 mx-auto py-3 hidden">
+
+
+        <h1 class="text-neutral font-bold text-xl pb-4">Cashout</h1>
+
+        <div class="card bg-base-100  rounded-[30px] p-2">
+            <div class="card-body">
+                <fieldset class="fieldset">
+
+                    <label class="label text-[15px] font-bold text-neutral">Agent Number</label>
+                    <input id="agent-number" type="number"
+                        class="input bg-base-200 w-full rounded-full p-5 text-[15px] "
+                        placeholder="Enter 11 digit agent number" minlength="11" maxlength="11" />
+                    <br>
+
+                    <label class="label text-[15px] font-bold text-neutral">Amount</label>
+                    <input id="amount-to-withdraw" type="number"
+                        class="input bg-base-200 w-full rounded-full p-5 text-[15px] "
+                        placeholder="Enter amount to withdraw" />
+                    <br>
+
+                    <label class="label text-[15px] font-bold text-neutral">Pin Number </label>
+                    <input id="cashout-pin" type="password" class="input bg-base-200 w-full rounded-full p-5 text-[15px]"
+                        placeholder="Enter Your 4 Digit pin" />
+
+                    <button id="cashout-money-btn"
+                        class="btn btn-primary mt-4 w-full rounded-full p-5 text-xl">Withdraw Money</button>
+                </fieldset>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- cash out ends from here -->
+
+
+
+
+    <!-- transfer money starts from here -->
+
+    <section id="transfer-money" class="w-11/12 mx-auto py-3 hidden">
+
+
+        <h1 class="text-neutral font-bold text-xl pb-4">Transfer Money</h1>
+
+        <div class="card bg-base-100  rounded-[30px] p-2">
+            <div class="card-body">
+                <fieldset class="fieldset">
+
+                    <label class="label text-[15px] font-bold text-neutral">User Account Number</label>
+                    <input id="user-account-number" type="number"
+                        class="input bg-base-200 w-full rounded-full p-5 text-[15px] "
+                        placeholder="Enter 11 digit agent number" minlength="11" maxlength="11" />
+                    <br>
+
+                    <label class="label text-[15px] font-bold text-neutral">Amount</label>
+                    <input id="amount-to-transfer" type="number"
+                        class="input bg-base-200 w-full rounded-full p-5 text-[15px] "
+                        placeholder="Enter amount to transfer" />
+                    <br>
+
+                    <label class="label text-[15px] font-bold text-neutral">Pin Number </label>
+                    <input id="transfer-pin" type="password" class="input bg-base-200 w-full rounded-full p-5 text-[15px]"
+                        placeholder="Enter Your 4 Digit pin" />
+
+                    <button id="transfer-money-btn"
+                        class="btn btn-primary mt-4 w-full rounded-full p-5 text-xl">Send Now</button>
+                </fieldset>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <!-- transfer money ends from here -->
+    
+
+
+
+      <!-- get bonus part starts from here -->
+
+
+       <section id="get-bonus-section" class="w-11/12 mx-auto py-3 hidden">
+      
+         <h1 class="text-neutral font-bold text-xl pb-4">Get Bonus</h1>
+
+        <div class="card bg-base-100  rounded-[30px] p-2">
+            <div class="card-body">
+                <fieldset class="fieldset">
+
+                    <label class="label text-[15px] font-bold text-neutral">User Bonus Coupon</label>
+                    <input id="user-coupon" type="text"
+                        class="input bg-base-200 w-full rounded-full p-5 text-[15px] "
+                        placeholder="write 'naky' which is coupon " />
+                    <br>
+
+                    <button id="bonus-btn"
+                        class="btn btn-primary mt-4 w-full rounded-full p-5 text-xl">Get Bonus
+                    </button>
+                </fieldset>
+            </div>
+        </div>
+
+        
+
+    </section>
+
+
+    <!-- get bonus part ends from here -->
+
+
+
+
+
+
+
+
+
+    <!-- history starts from here -->
+
+    <section id="transaction-histoty" class="w-11/12 mx-auto py-3 hidden">
+        <h1 class="text-neutral font-bold text-xl pb-4">Transaction History</h1>
+        
+        <div id="history-container">
+
+           
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- history ends from here -->
+
+
+
+  
+
+
+    </section>
+
+
+<!-- // machine script tak upore rakhbo karon ete common function gula thakbe jgulo k age load korte hobe jno call korle pawa jai -->
+    <script src="./script/machine.js"></script>
+    <script src="./script/addMoney.js"></script>
+    <script src="./script/cashout.js"></script>
+    <script src="./script/transfer.js"></script>
+    <script src="./script/getBonus.js"></script>
+</body>
+
+</html>
